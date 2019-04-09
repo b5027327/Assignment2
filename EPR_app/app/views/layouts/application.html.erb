@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EPR App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+
+   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal"> Electronic Product Review </h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#"> <%=link_to "Home", '#'%> </a>
+        <a class="p-2 text-dark" href="#"> <%=link_to "About Us", '#'%> </a>
+        <a class="p-2 text-dark" href="#"> <%=link_to "Contact Us", '#'%> </a>
+        <a class="p-2 text-dark" href="#"> <%=link_to "iPhone", '#'%> </a>
+        <a class="p-2 text-dark" href="#"> <%=link_to "iWatch", '#'%> </a>
+        <a class="p-2 text-dark" href="#"> <%=link_to "iPad", '#'%> </a>
+      </nav>
+    </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>
