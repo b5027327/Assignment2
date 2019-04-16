@@ -15,12 +15,14 @@
    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h5 class="my-0 mr-md-auto font-weight-normal"> Electronic Product Review </h5>
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#"> <%=link_to "Home", '#'%> </a>
-        <a class="p-2 text-dark" href="#"> <%=link_to "About Us", '#'%> </a>
-        <a class="p-2 text-dark" href="#"> <%=link_to "Contact Us", '#'%> </a>
-        <a class="p-2 text-dark" href="#"> <%=link_to "iPhone", '#'%> </a>
-        <a class="p-2 text-dark" href="#"> <%=link_to "iPad", '#'%> </a>
-        <a class="p-2 text-dark" href="#"> <%=link_to "Apple Watch", '#'%> </a>
+        <a class="p-2 text-dark" href="home"> <%=link_to "Home", static_pages_home_path %> </a>
+        <a class="p-2 text-dark" href="about"> <%=link_to "About Us", static_pages_about_path %> </a>
+        <a class="p-2 text-dark" href="contact"> <%=link_to "Contact Us", static_pages_contact_path %> </a>
+        <a class="p-2 text-dark" href="products"> <%=link_to "All Products", products_path %> </a>
+        <a class="p-2 text-dark" href="iphones"> <%=link_to "iPhone", iphones_path %> </a>
+        <a class="p-2 text-dark" href="ipads"> <%=link_to "iPad", ipads_path %> </a>
+        <a class="p-2 text-dark" href="apple-watches"> <%=link_to "Apple Watch", iwatches_path %> </a>
+        <a class="p-2 text-dark" href="profiles"> <%=link_to "Profile", profiles_path %> </a>
       </nav>
     </div>
   </div>
