@@ -23,10 +23,33 @@
         <a class="p-2 text-dark" href="ipads"> <%=link_to "iPad", ipads_path %> </a>
         <a class="p-2 text-dark" href="apple-watches"> <%=link_to "Apple Watch", iwatches_path %> </a>
         <a class="p-2 text-dark" href="profiles"> <%=link_to "Profile", profiles_path %> </a>
+        <a class="p-2 text-dark" href="register"> <%=link_to "Create Account", new_user_path %> </a>
+        <% if current_user %>
+          <a class="p-2 text-dark" href="#">
+            <%= link_to 'Log Out', session_path('active'), method: 
+            :delete %>
+          </a>
+          <a class="p-2 text-dark" href="#">
+            <%= current_user.userid %>
+          </a>
+        <% else %>
+          <a class="p-2 text-dark" href="#">
+            <%= link_to 'Log In', new_session_path, class: "active_nav_link" %>
+          </a>
+        <% end %>
       </nav>
     </div>
   </div>
   <div class = "container">
+
+  <% if alert %>
+    <%= alert %>
+    <% end %>
+
+  <% if notice %>
+    <%= notice %>
+    <% end %>
+
     <%= yield %>
   </div>
   </body>
