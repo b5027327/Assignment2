@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  rating: 1.5
+  review: MyText
+  date: 2019-04-19
+  iwatch_id: 1
+  profile_id: 1
+  product_id: 1
+
+two:
+  author: MyString
+  rating: 1.5
+  review: MyText
+  date: 2019-04-19
+  iwatch_id: 1
+  profile_id: 1
+  product_id: 1

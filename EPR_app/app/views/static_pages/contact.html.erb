@@ -2,21 +2,41 @@
 	<h1 class="jumbotron-heading">Contact Us</h1>
 <div class="container">
 	<div class="row">
-		<div class="col">
-			<p> <b>Email</b>
-			Please email us at epr@epr.co.uk for any enquiries and complaints. We will aim to respond within 24 hours.</p>
-		</div>
-		<div class="col">
-			<p> <b>Phone</b>
-			01142 8745963 </p>
-		</div>
-		<div class="col">
-			<p> <b>Twitter</b>
-			@electronicproductreview </p>
-		</div>
-		<div class="col">
-			<p> <b>Instagram</b>
-			@eprinsta </p>
-		</div>
+<div class="container">
+  <form action="action_page.php">
+  	<div class="col">
+    <label for="fname">Foreame: </label>
+    <input type="text" id="fname" name="firstname" placeholder="Your forename...">
+	</div>
+
+	<div class="col">
+    <label for="lname">Surname: </label>
+    <input type="text" id="lname" name="lastname" placeholder="Your surname...">
+	</div>
+
+	<div class="col">
+    <label for="country">Product: </label>
+    <select id="country" name="country">
+      <option value="x">iPhone X</option>
+      <option value="xr">iPhone XR</option>
+      <option value="xsmax">iPhone XS Max</option>
+      <option value="2018">iPad (2018)</option>
+      <option value="air">iPad Air (2019)</option>
+      <option value="pro">iPad Pro (3rd Gen)</option>
+      <option value="watch3">Apple Watch Series 3</option>
+      <option value="watch4">Apple Watch Series 4</option>
+    </select>
+	</div>    
+
+	<div class="col">
+    <label for="subject">Subject: </label>
+    <textarea id="subject" name="subject" placeholder="Write your enquiry here..." style="height:200px"></textarea>
+	</div>
+
+	<div class="col">
+    <input type="submit" value="Submit">
+	</div>
+  </form>
+</div>
 	</div>
 </div>

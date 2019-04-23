@@ -1,0 +1,84 @@
+<div class="container">
+<h2>iPad Reviews</h2>
+<table border="1" class="table">
+<tr>
+<th>Product Name</th>
+<th>Brand</th>
+<th>Average Cost</th>
+<th>Category</th>
+<th>Release Date</th>
+<th>Description</th>
+<th>Photo</th>
+</tr>
+
+<tr>
+<td> 2018 </td>
+<td> Apple </td>
+<td> $329 </td>
+<td> March 2018 </td>
+<td> Tablet </td>
+<td> A10 Fusion Chip built-in.
+Supports Apple Pencil.
+Perfect for Students & Schools.</td>
+<td> <%= image_tag "ipad2018.jpeg", size: "300x200" %> </td>
+</tr> 
+
+<tr>
+<td> Air (2019) </td>
+<td> Apple </td>
+<td> $499 </td>
+<td> March 2019 </td>
+<td> Tablet </td>
+<td> 256GB storage.
+10.5" Display.</td>
+<td> <%= image_tag "ipadair.jpeg", size: "300x200" %> </td>
+</tr>
+
+<tr>
+<td> Pro (3rd Gen) </td>
+<td> Apple </td>
+<td> $999 </td>
+<td> October 2018 </td>
+<td> Phone </td>
+<td> 1TB storage.
+Face ID.
+13" Display.</td>
+<td> <%= image_tag "ipadpro.jpeg", size: "300x200" %> </td>
+</tr>
+
+<p> <a class="p-2 text-dark" href="#"> <%=link_to "Add New iPad Review", new_ipad_path %> </a> </p>
+<table border="1" class="table">
+<tr>
+<th>Profile ID</th>
+<th>Product ID</th>
+<th>Author</th>
+<th>Rating</th>
+<th>Review</th>
+<th>Date</th>
+<th>Details</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+
+<% @ipads.each do |ipad| %>
+
+<tr>
+<td> <%= ipad.profile_id %> </td>
+<td> <%= ipad.product_id %> </td>
+<td> <%= ipad.author %> </td>
+<td> <%= ipad.rating %> </td>
+<td> <%= ipad.review %> </td>
+<td> <%= ipad.date %> </td>
+
+<td> <%= link_to 'Show', ipad_path(ipad) %> </td>
+<td> <%= link_to 'Edit', edit_ipad_path(ipad) %> </td>
+<td> <%= link_to 'Delete', ipad_path(ipad),
+method: :Delete,
+data: {confirm: "Are you sure you want to delete your iPad Review?"}
+%> </td>
+
+</tr>
+<% end %>
+</table>
+<%= will_paginate @ipad,renderer: BootstrapPagination::Rails %>
+</div>

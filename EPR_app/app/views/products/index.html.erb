@@ -1,0 +1,39 @@
+<div class="container">
+<h2>Products Available</h2>
+<p> <a class="p-2 text-dark" href="#"> <%=link_to "Add New Product", new_product_path %> </a> </p>
+<table border="1" class="table">
+<tr>
+<th>Product Name</th>
+<th>Brand</th>
+<th>Cost</th>
+<th>Category</th>
+<th>Release Date</th>
+<th>Description</th>
+<th>Product Photo</th>
+<th>Details</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr> 
+
+<% @products.each do |product| %>
+
+<tr>
+<td> <%= product.pname %> </td>
+<td> <%= product.brand %> </td>
+<td> <%= product.price %> </td>
+<td> <%= product.category %> </td>
+<td> <%= product.date %> </td>
+<td> <%= product.description %> </td>
+<td> <%= product.photo %> </td>
+
+<td> <%= link_to 'Show', product_path(product) %> </td>
+<td> <%= link_to 'Edit', edit_product_path(product) %> </td>
+<td> <%= link_to 'Delete', product_path(product),
+method: :Delete,
+data: {confirm: "Are you sure you want to delete Product?"}
+%> </td>
+
+</tr>
+<% end %>
+</table>
+</div>

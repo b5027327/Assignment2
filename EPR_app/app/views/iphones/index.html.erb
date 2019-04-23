@@ -1,0 +1,85 @@
+<div class="container">
+<h2>iPhone Reviews</h2>
+<table border="1" class="table">
+<tr>
+<th>Product Name</th>
+<th>Brand</th>
+<th>Average Cost</th>
+<th>Category</th>
+<th>Release Date</th>
+<th>Description</th>
+<th>Photo</th>
+</tr>
+
+<tr>
+<td> X </td>
+<td> Apple </td>
+<td> $999 </td>
+<td> September 2017 </td>
+<td> Phone </td>
+<td> Brand new OLED screen technology.
+Wireless charging.
+Bezel-less design.</td>
+<td> <%= image_tag "iphonex.jpeg", size: "300x200" %> </td>
+</tr> 
+
+<tr>
+<td> XR </td>
+<td> Apple </td>
+<td> $749 </td>
+<td> September 2018 </td>
+<td> Phone </td>
+<td> Liquid Retina LCD.
+Six colours to choose from.
+Bezel-less design.</td>
+<td> <%= image_tag "iphonexr.jpeg", size: "300x200" %> </td>
+</tr>
+
+<tr>
+<td> XS Max </td>
+<td> Apple </td>
+<td> $1099 </td>
+<td> September 2018 </td>
+<td> Phone </td>
+<td> 6.5" screen.
+Wireless charging.
+Dual SIMs.</td>
+<td> <%= image_tag "iphonexsmax.jpeg", size: "300x200" %> </td>
+</tr>
+
+<p> <a class="p-2 text-dark" href="#"> <%=link_to "Add New iPhone Review", new_iphone_path %> </a> </p>
+<table border="1" class="table">
+<tr>
+<th>Profile ID</th>
+<th>Product ID</th>
+<th>Author</th>
+<th>Rating</th>
+<th>Review</th>
+<th>Date</th>
+<th>Details</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+
+<% @iphones.each do |iphone| %>
+
+<tr>
+<td> <%= iphone.profile_id %> </td>
+<td> <%= iphone.product_id %> </td>
+<td> <%= iphone.author %> </td>
+<td> <%= iphone.rating %> </td>
+<td> <%= iphone.review %> </td>
+<td> <%= iphone.date %> </td>
+
+<td> <%= link_to 'Show', iphone_path(iphone) %> </td>
+<td> <%= link_to 'Edit', edit_iphone_path(iphone) %> </td>
+<td> <%= link_to 'Delete', iphone_path(iphone),
+method: :Delete,
+data: {confirm: "Are you sure you want to delete your iPhone Review?"}
+%> </td>
+
+</tr>
+<% end %>
+</table>
+<%= will_paginate @iphone,renderer: BootstrapPagination::Rails %>
+</div>

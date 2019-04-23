@@ -1,0 +1,69 @@
+<div class="container">
+<h2>Apple Watch Reviews</h2>
+<table border="1" class="table">
+<tr>
+<th>Product Name</th>
+<th>Brand</th>
+<th>Average Cost</th>
+<th>Category</th>
+<th>Release Date</th>
+<th>Description</th>
+<th>Photo</th>
+</tr>
+
+<tr>
+<td> Series 3 </td>
+<td> Apple </td>
+<td> $329 </td>
+<td> Smart Watch </td>
+<td> September 2017 </td>
+<td> Cellular connectivity. </td>
+<td> <%= image_tag "applewatch3.jpeg", size: "300x200" %> </td>
+</tr> 
+
+<tr>
+<td> Series 4 </td>
+<td> Apple </td>
+<td> $499 </td>
+<td> Smart Watch </td>
+<td> September 2018 </td>
+<td> Electrocardiography Technology. </td>
+<td> <%= image_tag "applewatch4.jpeg", size: "300x200" %> </td>
+</tr>
+
+<p> <a class="p-2 text-dark" href="#"> <%=link_to "Add New Apple Watch Review", new_iwatch_path %> </a> </p>
+<table border="1" class="table">
+<tr>
+<th>Profile ID</th>
+<th>Product ID</th>
+<th>Author</th>
+<th>Rating</th>
+<th>Review</th>
+<th>Date</th>
+<th>Details</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+
+<% @iwatches.each do |iwatch| %>
+
+<tr>
+<td> <%= iwatch.profile_id %> </td>
+<td> <%= iwatch.product_id %> </td>
+<td> <%= iwatch.author %> </td>
+<td> <%= iwatch.rating %> </td>
+<td> <%= iwatch.review %> </td>
+<td> <%= iwatch.date %> </td>
+
+<td> <%= link_to 'Show', iwatch_path(iwatch) %> </td>
+<td> <%= link_to 'Edit', edit_iwatch_path(iwatch) %> </td>
+<td> <%= link_to 'Delete', iwatch_path(iwatch),
+method: :Delete,
+data: {confirm: "Are you sure you want to delete your Apple Watch Review?"}
+%> </td>
+
+</tr>
+<% end %>
+</table>
+<%= will_paginate @iwatch,renderer: BootstrapPagination::Rails %>
+</div>
